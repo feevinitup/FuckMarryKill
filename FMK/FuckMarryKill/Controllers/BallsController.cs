@@ -6,16 +6,12 @@ using System.Web.Mvc;
 
 namespace FuckMarryKill.Controllers
 {
-    public class HomeController : Controller
+    public class BallsController : Controller
     {
         //
-        // GET: /Home/
+        // GET: /Balls/
 
-        public ActionResult Index(string id)
-        {
-            return View();
-        }
-        public ActionResult BoringPage()
+        public ActionResult Index()
         {
             return View();
         }
