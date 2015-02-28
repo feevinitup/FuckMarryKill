@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_WTFLayout.cshtml";
+}
+<script src="@Url.Content("~/Scripts/FMKData.js")" type="text/javascript"></script>
+
+<label>Color:</label><input id="Color" type="text"/>
+<label>Verb:</label><input id="Verb" type="text"/>
+<label>Animal:</label><input id="Animal" type="text"/>
+<br />
+<button id="addFields">Add to randomizer</button>
+<button id="run">Run FMK</button>
+
+<div id="output"></div>
+<div id="generate"></div>
+
+<script type="text/javascript">
+    //Add a click event to the button handler for randomizer add
+    $("#addFields").click(function () {
+        //Get the value inside the individual input fields
+        var newColor = $("#Color").val();
+        var newVerb = $("#Verb").val();
+        var newAnimal = $("#Animal").val();
+
+        //If Color is populated
+        if (!!newColor) {
+            data.color.push(newColor);
+        }
+        //If Verb is populated
+        if (!!newVerb) {
+            data.verb.push(newVerb);
+        }
+        //If Animal is populated
+        if (!!newAnimal) {
+            data.animal.push(newAnimal);
+        }
+    });
+
+    $("#run").click(function () {
+        WTF.init(data);
+    });
+</script>
